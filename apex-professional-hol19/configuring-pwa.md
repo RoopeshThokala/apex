@@ -18,6 +18,12 @@ In this lab, you:
 
 - Include screenshots to be displayed while installing the PWA app.
 
+### Downloads
+
+Stuck or Missed out on completing the previous labs? Don't worry! You can download the following application:
+
+- **[Demo Projects](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fdemo-projects-hol18.sql)**
+
 ## Task 1: Configure Progressive Web Application
 
 1. Navigate to the **Demo Projects** Application.
@@ -86,11 +92,11 @@ Users can long-press on the home screen app icon on touch-enabled devices to acc
 
 By providing these shortcuts, Oracle APEX enhances the user experience and makes it easier for users to access the pages they need within the PWA quickly.
 
-> **Note:** _An APEX application can only use PWA Shortcuts if Rejoin Sessions is enabled. Before configuring shortcuts, click either Enable for Public Sessions or Enable for All Sessions._
+> **Note:** An APEX application can only use PWA Shortcuts if Rejoin Sessions is enabled. Before configuring shortcuts, click either Enable for Public Sessions or Enable for All Sessions.
 
 1. Scroll down to **Shortcuts** and click **Enable for All Sessions**. Confirm by clicking **Enable for All Sessions** in the popup window.
 
-    > **Note:** _This option does not work in *apex.oracle.com* instance._
+    > **Note:** This option does not work in *apex.oracle.com* instance.
 
     ![enable for all sessions](images/enable-for-all-sessions.png " ")
 

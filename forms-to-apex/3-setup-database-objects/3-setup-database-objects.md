@@ -18,7 +18,7 @@ To create database objects, you need to download the following three files:
 
 - [labfiles\_forms\_data\_insert.sql](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fforms_data_insert.sql) as sample data insert script.
 
-- [labfiles\_pkg\_modernization.sql](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fpkg_modernization.sql) as a package script.
+- [labfiles\_pkg\_modernization.sql](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles_pkg_modernization.sql) as a package script.
 
 ## Task 1: Create Database Objects in APEX Workspace
 
@@ -45,6 +45,7 @@ To create database objects, you need to download the following three files:
     ![Data Insert File](images/run-now-forms-ddl.png " ")
 
 5. Object creation script output is visible on the page after execution. You can see the total number of statements executed and the total number of errors encountered (see "Statements Processed", "Successful" and "With Errors").
+
     ![Data Insert File](images/scripts.png " ")
 
 6. Now click **SQL Scripts** and run the second script to populate the tables, **forms\_data\_insert.sql** under **Run** label and then **Run Now**.
@@ -82,4 +83,4 @@ Now that the workspace has been populated with database objects and data content
 ## Acknowledgements
 
 - **Author** - Monica Godoy, Senior Principal Product Manager ; Ankita Beri, Product Manager; Paolo Paolucci, Data Development Specialist; Victor Mendo, Data Development Specialist
-- **Last Updated By/Date** - Ankita Beri, Product Manager, July 2024
+- **Last Updated By/Date** - Ankita Beri, Product Manager, January 2025

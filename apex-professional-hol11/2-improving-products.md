@@ -20,6 +20,18 @@ In this lab, you will:
 
 - Understand how different filter types contribute to an efficient search experience.
 
+### Downloads
+
+Stuck or Missed out on completing the previous labs? Don't worry! You can download the following application:
+
+- **[Online Shopping Application](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FCreateUsingDynamicActions-OnlineShoppingApplication.sql)**
+
+Import them into your workspace. To run the app, please run the steps described in the following workshops:
+
+- **[Get Started with Oracle APEX](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3509)**
+
+- **[Using SQL Workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3524)**
+
 ## Task 1: Navigate to the Products Page
 
 In this Lab, you will be using an Online Shopping Application. Navigate to **Online Shopping Application**. In the Runtime environment, navigate to **Products**. This is the page where customers can explore the products and select what they wish to buy.
@@ -143,7 +155,7 @@ This task focuses on updating the design and layout of the cards that display pr
 
         ```
         <copy>
-            <small>&BRAND.</small><br />
+            <small>&BRAND.</small> <br/>
             <b class="u-success-text u-pullRight" id="message_&PRODUCT_ID.">
             {if QUANTITY/} &QUANTITY. in cart {endif/}
             </b>
@@ -251,11 +263,11 @@ In this task, you will create two dynamic actions:
                 productQuantity = this.data.P18_QUANTITY,
                 productCard$  = apex.jQuery("#message_" + this.data.P17_PRODUCT_ID);
 
-            if (productAction === 'ADD') {
+               if (productAction === 'ADD') {
                 productCard$.text("Added " + productQuantity + " to cart!");
-            } else if (productAction === 'EDIT') {
+            }    else if (productAction === 'EDIT') {
                 productCard$.text("Updated quantity to " + productQuantity + "!");
-            } else if (productAction === 'DELETE') {
+            }    else if (productAction === 'DELETE') {
                 productCard$.text("Removed from cart!");
             }
         </copy>

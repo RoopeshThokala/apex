@@ -30,13 +30,15 @@ In this lab, you:
 
 4. On **Create Form** wizard, enter/select the following:
 
-    - Page Number: **7**
+    - Under Page Definition:
 
-    - Name: **Item - Details**
+        - Page Number: **7**
 
-    - Page Mode: **Drawer**
+        - Name: **Item - Details**
 
-    - Table/View Name: **S_ITEM**
+        - Page Mode: **Drawer**
+
+    - Data Source > Table/View Name: **S_ITEM**
 
     Click **Next**.
 
@@ -51,6 +53,12 @@ In this lab, you:
      Click **Create Page**.
 
     ![App Builder](images/item-detail-key.png " ")
+
+6. In the left pane, navigate to **Items - Details** region and expand the columns. Select **P7\_PRODUCT\_ID**. In the property editor, enter/select the following:
+
+    - Label > Label: **Product**    
+
+    ![App Builder](images/items-detail-page-item-label.png " ")
 
 ## Task 2: Create Validations
 
@@ -146,9 +154,41 @@ The S_ITEM table has five columns required: ORD\_ID, ITEM\_ID, PRODUCT\_ID, PRIC
 
     ![App Builder](images/drag-process1.png " ")
 
-5. Lastly, navigate to **Rendering** tab, organize the items in the layout by dragging and dropping the items as per your preference and click **Save**.
+5. Lastly, navigate to **Rendering** tab, organize the items in the layout by dragging and dropping the items as per your preference.
 
     ![App Builder](images/drag-item1.png " ")
+
+## Task 5: Create a Validation Process
+
+1. In the **Processing** tab, right-click **Validating** and select **Create Validation**.
+
+    ![App Builder](images/create-validation.png " ")
+
+2. In the property editor, enter/select the following:
+
+    - Under Identification:
+
+        - Name: **Validate Products**
+
+    - Under the Validation:
+
+        - Type: **Function Body (returning Error Text)**
+
+        - PL/SQL Function Body Returning Error Text: Copy and paste the below code:
+
+        ```
+         <copy>
+         return PKG_MODERNIZATION.F_VALIDATE_ITEM(
+         p_product_id => :P7_PRODUCT_ID,
+         p_ord_id     => :P7_ORD_ID);
+         </copy>
+        ```
+
+        - Always Execute: **Toggle On**
+
+   ![App Builder](images/validate-products-validation.png " ")
+
+3. Click **Save**.
 
 ## Summary
 
@@ -157,4 +197,4 @@ In this lab, you created a functional form for managing items in Oracle APEX by 
 ## Acknowledgements
 
 - **Author** - Monica Godoy, Senior Principal Product Manager ; Ankita Beri, Product Manager; Paolo Paolucci, Data Development Specialist; Victor Mendo, Data Development Specialist
-- **Last Updated By/Date** - Ankita Beri, Product Manager, July 2024
+- **Last Updated By/Date** - Ankita Beri, Product Manager, January 2025

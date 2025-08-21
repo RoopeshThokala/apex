@@ -22,6 +22,16 @@ In this lab, you will:
 
 - Exclude specific columns from DML operations and configure them for display-only purposes.
 
+### Downloads
+
+Stuck or Missed out on completing the previous labs? Don't worry! You can download the following application:
+
+- **[Demo Projects](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fdemo-projects-hol5.sql)**
+
+Import them into your workspace. To run the app, please run the steps described in the following workshops:
+
+- **[Get Started with Oracle APEX](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3509)**
+
 ## Task 1: Manage and Customize Interactive Grid as a Developer
 
 In this task, you customize the Interactive Grid for end users. You create column groups, set pagination type, and set the report downloadable formats that should be available for end users. You also enable end users to save the report as **Public** interactive grids and convert a read-only interactive grid to an editable one.
@@ -36,7 +46,7 @@ In this task, you customize the Interactive Grid for end users. You create colum
 
     ![Edit Page 4](./images/click-page.png " ")
 
-3. In the Property Editor, add the following column Group headers to the interactive grid:
+3. In the Property Editor, add the following column group headers to the interactive grid:
 
     - **Project Breakdown**: Project, Task_Name columns
 

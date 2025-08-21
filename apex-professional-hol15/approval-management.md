@@ -16,7 +16,19 @@ In this lab, you will:
 
 - Create and implement email templates for consistent communication.
 
-- Automate application workflows using scheduled actions
+- Automate application workflows using scheduled actions.
+
+### Downloads
+
+Stuck or Missed out on completing the previous labs? Don't worry! You can download the following application:
+
+- **[Online Shopping Application](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FUsingThemesTemplates-OnlineShoppingApplication.sql)**
+
+Import them into your workspace. To run the app, please run the steps described in the following workshops:
+
+- **[Get Started with Oracle APEX](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3509)**
+
+- **[Using SQL Workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3524)**
 
 ## Task 1: Send E - Mail from an application
 
@@ -88,29 +100,29 @@ In this task, you will learn how to configure a process to send automated email 
 
         - Body Plain Text: Copy and paste the below text:
 
-        ```
-        <copy>
-        Hello &P17_CUSTOMER_FULLNAME.,
-        We're getting your order ready to be shipped. We will notify you when it has been sent.
-        <a href="&P17_APP_ITEM_URL." target="_blank">View your order</a>
-        If you have any questions contact us at noreply@oracle.com
-        </copy>
-        ```
+            ```
+            <copy>
+            Hello &P17_CUSTOMER_FULLNAME.,
+            We're getting your order ready to be shipped. We will notify you when it has been sent.
+            <a href="&P17_APP_ITEM_URL." target="_blank">View your order</a>
+            If you have any questions contact us at noreply@oracle.com
+            </copy>
+            ```
 
         - Body HTML:Copy and paste the below text:
 
-        ```
-        <copy>
-        <html>
-        <body>
-        <p>Hello &P17_CUSTOMER_FULLNAME.,</p><br>
-        <p>We're getting your order ready to be shipped. We will notify you when it has been sent.</p><br>
-        <p><a href="&P17_APP_ITEM_URL." target="_blank">View your order</a></p><br>
-        <p>If you have any questions contact us at noreply@oracle.com</p><br>
-        </body>
-        </html>
-        </copy>
-        ```
+            ```
+            <copy>
+            <html>
+            <body>
+            <p>Hello &P17_CUSTOMER_FULLNAME.,</p><br>
+            <p>We're getting your order ready to be shipped. We will notify you when it has been sent.</p><br>
+            <p><a href="&P17_APP_ITEM_URL." target="_blank">View your order</a></p><br>
+            <p>If you have any questions contact us at noreply@oracle.com</p><br>
+            </body>
+            </html>
+            </copy>
+            ```
 
     ![Select Sql Workshop](./images/send-email.png " ")
 
@@ -120,45 +132,19 @@ In this task, you will learn how to configure a process to send automated email 
 
 This task focuses on capturing customer feedback after an order is placed. By adding interactive elements like a star rating and feedback text box, you will create a mechanism to gather valuable insights from users about their shopping experience.
 
-1. Navigate to **SQL Workshop**, click **Object Browser**.
-
-    ![Select Sql Workshop](./images/object-browser.png " ")
-
-2. Under **Tables**, select **Orders** and click **Add Column**.
-
-    ![Select Sql Workshop](./images/add-column.png " ")
-
-3. Add the following three columns into the **Orders** table and click **Apply**.
-
-    | Column | Data Type | Length | Default |
-    | ------ | --------- | ------ | ------- |
-    | STAR_RATING | NUMBER |      |         |
-    | FEEDBACK   | VARCHAR2 | 2000 |        |
-    | EMAIL_FLAGGED | VARCHAR2 | 1  | 'N' |
-
-    ![Select Sql Workshop](./images/star-rating.png " ")
-
-    ![Select Sql Workshop](./images/feedback.png " ")
-
-    ![Select Sql Workshop](./images/email-flagged.png " ")
-
-4. Navigate to **App Builder**.
-
-    ![Select Sql Workshop](./images/app-builder.png " ")
-
-5. Select **Online Shopping Application**.
+1. Navigate to **App Builder** and select **Online Shopping Application**.
 
     ![Select Sql Workshop](./images/online-shop-app.png " ")
 
-6. Click **16 - Order Information**.
+2. Click **16 - Order Information**.
 
     ![Select Sql Workshop](./images/16-shop-info.png " ")
 
-7. In the left pane, right-click **Thank you for your order!** region and select **Create Sub Region**.
+3. In the left pane, right-click **Thank you for your order!** region and select **Create Sub Region**.
 
     ![Select Sql Workshop](./images/sub-region.png " ")
 
-8. In the Property Editor, enter/select the following:
+4. In the Property Editor, enter/select the following:
 
     - Identification > Name: **Rate your shopping experience**
 
@@ -166,11 +152,11 @@ This task focuses on capturing customer feedback after an order is placed. By ad
 
     ![Select Sql Workshop](./images/rate-your-exp.png " ")
 
-9. Right-click **Rate your shopping experience** region and select **Create Page Item**.
+5. Right-click **Rate your shopping experience** region and select **Create Page Item**.
 
     ![Select Sql Workshop](./images/page-item1.png " ")
 
-10. Create the following two page items one after the other:
+6. Create the following two page items one after the other:
 
     | Name | Type | Label |
     | ---- | ---- | ----- |
@@ -181,11 +167,11 @@ This task focuses on capturing customer feedback after an order is placed. By ad
 
     ![Select Sql Workshop](./images/feedback-item.png " ")
 
-11. Right-click **Rate your shopping experience** region and select **Create Button**.
+7. Right-click **Rate your shopping experience** region and select **Create Button**.
 
     ![Select Sql Workshop](./images/create-btn-submit.png " ")
 
-12. In the Property Editor, enter/select the following:
+8. In the Property Editor, enter/select the following:
 
     - Under Identification:
 
@@ -207,11 +193,11 @@ This task focuses on capturing customer feedback after an order is placed. By ad
 
     ![Select Sql Workshop](./images/btn-server.png " ")
 
-13. Navigate to **Processing** tab, right-click **Processing** and select **Create Process**.
+9. Navigate to **Processing** tab, right-click **Processing** and select **Create Process**.
 
     ![Select Sql Workshop](./images/create-process-1.png " ")
 
-14. In the Property Editor, enter/select the following:
+10. In the Property Editor, enter/select the following:
 
     - Identification > Name: **Submit Review**
 
@@ -232,7 +218,7 @@ This task focuses on capturing customer feedback after an order is placed. By ad
 
      ![Select Sql Workshop](./images/submit-review.png " ")
 
-15. Click **Save**.
+11. Click **Save**.
 
 ## Task 3: Create an Email Template
 
@@ -262,38 +248,39 @@ Email templates simplify the process of sending structured, professional message
 
     - HTML Format > Body: Copy and paste the below HTML
 
-    ```
-    <copy>
-    <html>
-     <body>
-       <p>Dear #CUSTOMER_NAME#,</p>
-       <p>Thank you for purchasing !</p>
-       <p>We hope you're enjoying it. Could you take a moment to rate your experience?</p>
-       <p>
-          <a href="#RATING_LINK#">Click here to rate this product</a>
-       </p>
-       <p>Thank you for your feedback!</p>
-       <p>Best regards,</p>
-       <p>Online Shopping Application</p>
-     </body>
-    </html>
-    </copy>
-    ```
+        ```
+        <copy>
+        <html>
+         <body>
+           <p>Dear #CUSTOMER_NAME#,</p>
+           <p>Thank you for purchasing !</p>
+           <p>We hope you're enjoying it. Could you take a moment to rate your experience?</p>
+           <p>
+              <a href="#RATING_LINK#">Click here to rate this product</a>
+           </p>
+           <p>Thank you for your feedback!</p>
+           <p>Best regards,</p>
+           <p>Online Shopping Application</p>
+         </body>
+        </html>
+        </copy>
+        ```
 
     ![click Create Email Template](./images/product-review-reminder.png " ")
 
     - **Plain Text Format**: Copy the text below and paste it into plain text format:
-    ```
-    <copy>
-    Dear #CUSTOMER_NAME#,
-    Thank you for purchasing [Product Name]!
-    We hope you're enjoying it. Could you take a moment to rate your experience? Your feedback helps us improve and serve you better.
-    Click the link below to rate your product: #RATING_LINK#
-    Thank you for your time and input!
-    Best regards,
-    The Online Shopping App
-    </copy>
-    ```
+
+        ```
+       <copy>
+        Dear #CUSTOMER_NAME#,
+        Thank you for purchasing [Product Name]!
+        We hope you're enjoying it. Could you take a moment to rate your experience? Your feedback helps us improve and serve you better.
+        Click the link below to rate your product: #RATING_LINK#
+        Thank you for your time and input!
+        Best regards,
+        The Online Shopping App
+        </copy>
+        ```
 
     ![Create Email Template](./images/create-template.png " ")
 
@@ -343,13 +330,13 @@ Automation is key to improving application efficiency and reducing manual effort
 
     - Source > Where Clause: Copy and paste the below code:
 
-    ```
-    <copy>
-        TO_DATE(TO_CHAR(order_datetime, 'MM/DD/YYYY'), 'MM/DD/YYYY') = SYSDATE - 1
-        AND EMAIL_FLAGGED = 'N'
-        AND STAR_RATING IS NULL
-    </copy>
-    ```
+        ```
+        <copy>
+            TO_DATE(TO_CHAR(order_datetime, 'MM/DD/YYYY'), 'MM/DD/YYYY') = SYSDATE - 1
+            AND EMAIL_FLAGGED = 'N'
+            AND STAR_RATING IS NULL
+        </copy>
+        ```
 
 6. Click **Save Changes**.
 
@@ -369,11 +356,11 @@ Automation is key to improving application efficiency and reducing manual effort
 
     - Code > Code: Copy and paste the below code:
 
-    ```
-    <copy>
+        ```
+        <copy>
         DECLARE
-        l_url CLOB;
-    BEGIN
+            l_url CLOB;
+        BEGIN
         FOR x IN (SELECT c.full_name,
                      c.email_address,
                      o.order_id,
@@ -413,9 +400,9 @@ Automation is key to improving application efficiency and reducing manual effort
             SET    email_flagged = 'Y'
             WHERE  order_id = x.order_id;
         END LOOP;
-    END; 
-    </copy>
-    ```
+        END;
+        </copy>
+        ```
 
     ![Create Email Template](./images/send-email1.png " ")
 

@@ -26,13 +26,13 @@ In this lab, you will:
 
 - Add, edit, or remove the product from the shopping cart.
 
-### Downloads
+<!--### Downloads
 
 Stuck or Missed out on completing the previous labs? Don't worry! You can download the application from the following:
 
 - **[Sample Reporting](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FEnhancing-your-application-usingComputationsProcessesValidations-SampleReporting.sql)**
 
-- **[Online Shopping Application](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FEnhancing-your-application-using-ComputationsProcessesValidations-Online ShoppingApplication.sql)**
+- **[Online Shopping Application](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FEnhancing-your-application-using-ComputationsProcessesValidations-OnlineShoppingApplication.sql)**
 
 - **[Demo Projects](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FEnhancing-your-application-using-ComputationsProcessesValidations-DemoProjects.sql)**
 
@@ -40,7 +40,7 @@ Import them into your workspace. To run the app, please run the steps described 
 
 1. **[Get Started with Oracle APEX](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3509)**
 
-2. **[Using SQL Workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3524)**
+2. **[Using SQL Workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3524)**-->
 
 > **Note:** This workshop assumes you are using Oracle APEX 24.2. Some of the features might not be available in prior releases and the instructions, flow, and screenshots might differ if you use an older version of Oracle APEX.
 
