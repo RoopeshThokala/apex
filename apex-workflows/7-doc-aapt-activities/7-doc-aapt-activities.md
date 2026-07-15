@@ -476,11 +476,9 @@ Once the Patient confirms the invoice / makes the payment, the Appointment recor
 
         - Static Value: **PAID**
 
-    - For **p_fee**, under Value:
+    - For **p_fee**:
 
-        - Type: **Item**
-
-        - Item > Version Variables: **FEES**
+        - Value > Type: **API Default**
 
     ![config booking id](./images/config-status.png " ")
 
