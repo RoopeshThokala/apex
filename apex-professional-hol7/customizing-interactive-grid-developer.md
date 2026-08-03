@@ -1,134 +1,159 @@
 # Customize Interactive Grid as a Developer
-<!--# Create the shopping cart page -->
+
 ## Introduction
 
-In this lab, you customize:
-  - **Project Tasks** page we Created in Lab 5.
-  - **Interactive Grid** Page as a developer.
+In this lab, you will learn how to customize and manage an interactive grid for end users using the **Demo Projects** application. You will create column groups, set pagination types, and control report download formats. Additionally, you will enable users to save public interactive grids and convert a read-only grid into an editable one. By the end, you will understand how to effectively manage grid settings and configurations to enhance user experience.
 
-<!--
-Customers will be able to:
-- Review the items in the shopping cart
-- Edit the quantity of the items
-- Remove an item
-- Clear the shopping cart
-- Proceed to checkout
-
-Estimated Time: 20 minutes
-
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:Cvl9xMAqnm8)
--->
-
-Estimated Time: 20 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
-In this lab, you:
-- Customise the Interactive Grid page you have created in **Demo Projects** Application as a **Developer**.
+
+In this lab, you will:
+
+- Create and manage column groups in an interactive grid.
+
+- Rearrange columns and organize grid layout for optimal user experience.
+
+- Enable users to save public interactive grid reports and customize downloadable formats.
+
+- Convert a read-only interactive grid into an editable one.
+
+- Modify pagination settings and display the total row count in the grid.
+
+- Exclude specific columns from DML operations and configure them for display-only purposes.
 
 ### Downloads
 
-- Did you miss out trying the previous labs? Don’t worry! You can download the application from [here](files/demo-projects-2.sql) and import it into your workspace. To run the app, please run the steps described in **Hands-on-lab-01** and **Hands-on-Lab-02**.
+Stuck or Missed out on completing the previous labs? Don't worry! You can download the following application:
 
+- **[Demo Projects](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2Fdemo-projects-hol5.sql)**
+
+Import them into your workspace. To run the app, please run the steps described in the following workshops:
+
+- **[Get Started with Oracle APEX](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3509)**
 
 ## Task 1: Manage and Customize Interactive Grid as a Developer
-This lab uses the **Demo Projects** application. In this lab, you customize the **Interactive Grid** for end users. You create column groups, set pagination type, and set the report downloadable formats that should be available for end users. You also enable end users to save the report as Public interactive grids and convert a read only interactive grid to an editable interactive grid.
 
-1. Navigate to **App Builder** and run the **Demo Projects** application.
+In this task, you customize the Interactive Grid for end users. You create column groups, set pagination type, and set the report downloadable formats that should be available for end users. You also enable end users to save the report as **Public** interactive grids and convert a read-only interactive grid to an editable one.
 
-    ![](./images/select-demo-projects-app11.png " ")
+1. Navigate to **App Builder**, select **Demo Projects** application and click **Run Application**.
 
-    ![](./images/run-demo-projects-app11.png " ")
+    ![App Builder](./images/select-demo-projects-app.png " ")
 
-2. In the navigation menu, click **Projects Tasks**. You want to customise the display of this interactive grid for your end users. In the Developer Toolbar, click **Edit Page 4**.
+    ![App Builder](./images/run-demo-projects-app.png " ")
 
-    ![](./images/click-page11.png " ")
+2. In the navigation menu, click Projects Tasks. In the Developer Toolbar, click Page 4 to customize this interactive grid for your end users.
 
-3. Add column group headers to the interactive grid as:
-    - Project Breakdown: Project, Task_Name columns
-    - Schedule: Start\_Date, End\_Date columns
-    - Project Financing: Cost, Budget columns  
+    ![Edit Page 4](./images/click-page.png " ")
 
-    a) In the page designer, under Components > Body, navigate to **Project Tasks** Interactive Grid region and right-click **Column Groups**. Select **Create Column Group**.
+3. In the Property Editor, add the following Column Group headers to the interactive grid:
 
-    ![](./images/create-column-group11.png " ")
+    - **Project Breakdown**: Project, Task_Name columns
 
-    b) In the Property Editor, enter **Project Breakdown** for Heading.
+    - **Schedule**: Start\_Date, End\_Date columns
 
-    ![](./images/create-column-group1.png " ")
+    - **Project Financing**: Cost, Budget columns
 
-    c) Repeat the above two steps **a** and **b** to create column groups: **Schedule** and **Project Financing**.
+    **a)** Navigate to **Project Tasks** region, right-click **Column Groups** and select **Create Column Group**.
 
-    d) Now that you created column groups, you need to assign columns to them. Expand **Columns** and select **Project** and **Task_Name** columns.
+    Create the following three Column Groups one after the other.
 
-    e) In the property editor, under **Layout**, select **Project Breakdown** for Group.
+    | Column Group          | Heading       |
+    | --------------------- | ----------- |
+    | Project Breakdown  | Project Breakdown |
+    | Schedule | Schedule |
+    | Project Financing | Project Financing |
+    {: title="Column Groups"}
 
-    ![](./images/select-project-breakdown11.png " ")
+    ![Add column group headers](./images/create-column-group.png " ")
 
-    f) Then, select **Start_Date** and **End_Date** columns. In the property editor, under **Layout**, select **Schedule** for Group.
+    ![Add column group headers](./images/reate-column-group1.png " ")
 
-    ![](./images/select-schedule-group11.png " ")
+    **b)** Now that you have created Column Groups, you must assign them columns. Expand **Columns** in the rendering tree and select **PROJECT** and **TASK_NAME** columns.
 
-    g) Finally, select **Cost**, and **Budget** columns. In the property editor, under **Layout**, select **Project Financing** for Group.
+    In the property editor, under **Layout**, select **Project Breakdown** for the group.
 
-    Then, click **Save** and **Run Page**.
+    ![Add column group headers](./images/create-column-group2.png " ")
 
-    ![](./images/select-financing-group11.png " ")
+    **c)** Then, in thee rendering tree, select **START\_DATE** and **END\_DATE** columns.
 
-    h) The interactive grid now displays column groups.
+    In the property editor, under **Layout**, select **Schedule** for the Group.
 
-    ![](./images/display-groups11.png " ")
+    ![Add column group headers](./images/select-schedule-group11.png " ")
 
-4. Rearrange the columns in the interactive grid. You want to display the column groups Project Breakdown, Schedule, and Project Financing display in order followed by Status and Assigned To.
+    **d)** Finally, in the rendering tree, select **COST**, and **BUDGET** columns.
 
-    a) Hover the mouse over the Project Financing column group header to display the drag handle. Your mouse cursor also changes when it comes into contact with the drag handle. Click and hold the drag handle.
+    In the property editor, under **Layout**, select **Project Financing** for Group.
 
-    b) Then, drag the column group to the Status column location. The heading shifts out of place in the row. The Project Financing column group should be followed by the Status column. Release the mouse. The Project Financing column group drops into place.
+    Then, click **Save and Run**.
 
-    ![](./images/rearrange-column11.png " ")
+    ![Add column group headers](./images/select-financing-group11.png " ")
 
-    ![](./images/rearrange-column12.png " ")
+    **e)** The interactive grid now displays Column Groups.
 
-5. Click **Page n** in the runtime developer toolbar. You want to make **ID** Column as **Primary Key**. This will help you to make the Interactive Grid editable.
+    ![Add column group headers](./images/display-groups11.png " ")
 
-    ![](./images/define-primary-key.png " ")
+4. Rearrange the columns in the interactive grid. You want to display the Column Groups Project Breakdown, Schedule, and Project Financing in order, followed by Status and Assigned To.
 
-6. You want to ensure that end users can save Public interactive grids. You want to exclude HTML from the download formats available to end users.
-    a) Under Rendering, select the **Project Tasks** Interactive Grid region.
+    **a)** Hover the mouse over the **Project Financing** Column Group header to display the drag handle. Your mouse cursor also changes when it comes into contact with the drag handle. Click and hold the **drag** handle.
 
-    ![](./images/select-project-tasks11.png " ")
+    **b)** Then, drag the Column Group to the **Status** column location. The Heading shifts out of place in the row. The Status column should follow the Project Financing Column Group. Release the mouse. The Project Financing Column Group drops into place.
 
-    b) In the property editor, select **Attributes** , then navigate to **Enable Users To**. Click **Save Public Report** to enable the feature. Under **Download**, deselect the **HTML** check box.
+    ![Add column group headers](./images/rearrange-column11.png " ")
 
-    ![](./images/enbale-public-reports11.png " ")
+    ![Add column group headers](./images/rearrange-column12.png " ")
 
-7. Convert this read only interactive grid in to an **Editable interactive grid**. Then, reset the pagination as Page type displaying the total row count.  
+5. You want to ensure end users can save Public interactive grids. You want to exclude HTML from the download formats available to end users.
 
-    a) Under Rendering, select the **Project Tasks** Interactive Grid region.
+    **a)** In the **Rendering** tab, select the **Project Tasks** Interactive Grid region.
 
-    b) In the property editor, navigate to **Attributes** and then navigate to Edit. Click **Enabled**, to turn on the feature.
-       Also Under **Pagination**, select **Page** for Type.
+    **b)** In the property editor, select **Attributes**, and perform the following steps:
 
-    ![](./images/edit-enabled11.png " ")
+    - Enable Users To > Save Public Report: Toggle **ON**.
 
-8. Delete the column groups in the interactive grid. Under Rendering > Project Tasks Interactive Grid > Column Groups. Select **Schedule**, **Project Breakdown** and **Project Financing**, right-click and click **Delete**.
+    - Download > Disable **HTML**
 
-    ![](./images/delete-column-group11.png " ")
+    ![save Public interactive grids](./images/enbale-public-reports11.png " ")
 
-9. Suppose you want to display the ID column and exclude the ID column from DML operations. Under **Page Rendering > Project Tasks** Interactive Grid, expand Columns and select **ID**.
+6. Convert this read-only interactive grid into an **Editable interactive grid**. Then, reset the pagination as page type, displaying the total row count.
 
-    Navigate to **Identification** and Set Type to **Display Only**, then Navigate to **Source** and Click on **Query Only** to enable.
-    Click **Save and Run Page**.
-    ![](./images/set-id-col-attributes11.png " ")
+    **a)** Under Rendering, select the **Project Tasks** Interactive Grid region.
 
+    **b)** In the property editor, navigate to **Attributes** and perform the following steps:
+
+    - Edit > Enabled: Toggle **ON**
+
+    - Pagination > Type: **Page**
+
+    ![Editable interactive grid](./images/edit-enabled11.png " ")
+
+7. Delete the Column Groups in the interactive grid.
+
+    Navigate to Project Tasks > Column Groups. Right-click **Schedule**, **Project Breakdown** and **Project Financing**, and select **Delete**.
+
+    ![Column Groups](./images/delete-column-group11.png " ")
+
+8. Suppose you want to display the ID column and exclude the ID column from DML operations.
+
+    Navigate to **Project Tasks > Columns > ID**.
+
+    In the Property Editor, enter/select the following:
+
+    - Identification > Type: **Display Only**
+
+    - Heading > Heading: **ID**
+
+    Click **Save and Run**.
+
+    ![Column Groups](./images/set-id-col-attributes.png " ")
+
+    ![Column Groups](./images/run-ig.png " ")
 
 ## Summary
 
-You now know how to Manage and Customise the Interactive Grid as a developer. You may now **proceed to the next lab**.
+You now know how to Manage and Customize the Interactive Grid as a Developer. You may now **proceed to the next lab**.
 
-## Acknowledgments
+## Acknowledgements
 
-- **Author** - Roopesh Thokala, Product Manager
-- **Contributor** - Ankita Beri, Product Manager
-- **Last Updated By/Date** - Ankita Beri, Product Manager, May 2023
+- **Author** - Roopesh Thokala, Principal Product Manager; Ankita Beri, Senior Product Manager
+- **Last Updated By/Date** - Ankita Beri, SeniorProduct Manager, October 2025

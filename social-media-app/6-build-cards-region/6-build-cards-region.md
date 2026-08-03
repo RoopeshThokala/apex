@@ -2,87 +2,89 @@
 
 ## Introduction
 
-In this lab, you learn to create the CARDS region to display the posts and configure the region attributes.
+In this lab, you will create and configure a Cards region to display posts in the Social Media App. You will use a SQL query as the data source, configure card attributes, and customize how post details and images are displayed on the page.
 
-Estimated Time: 10 minutes
-
-Watch the video below for a quick walk-through of the lab.
-[Create an APEX App](videohub:1_cmdi0d57)
+<!-- Watch the video below for a quick walk-through of the lab.
+[Create an APEX App](videohub:1_cmdi0d57) -->
 
 ### Objectives
 
 In this lab, you will:
-- Create the Cards region to display the posts
-- Configure the attributes of the Cards region to match our design
+
+- Create a Cards region to display posts.
+
+- Configure the Cards region attributes.
+
+- Display images and post details using card components.
 
 ### Prerequisites
 
 - Completion of workshop through Lab 5
 
+Estimated Time: 10 minutes
+
 ## Task 1: Create a Cards Region
 
-1. Navigate to the Rendering Tree and right-click on **Body**, and
-choose **Create Region**.   
+1. In the left pane, right-click **Body**, and select **Create Region**.
 
-    ![Create region option](images/create-region.png)
+    ![Create region option](images/create-region-s.png)
 
-2. Update the following attributes in the Property Editor:
+2. In the Property Editor, enter/select the following
 
     - Under Identification:
-         - For Title, enter **Timeline**
-         - For Type, select **Cards**
 
-    ![Property Editor](images/title-type.png)
+         - Name: **Timeline**
 
+         - Type: **Cards**
 
-3.  Under Source, for Type select **SQL Query**. Enter the following **SQL Query** into the SQL
-    Query box:
+    - Under Source:
 
-    ```
-    <copy>
-        select
-        p.id,
-        p.created_by AS user_name,
-        p.post_comment AS comment_text,
-        p.file_blob,
-        p.file_mime,
+        - Type: **SQL Query**
 
-        apex_util.get_since(p.created) post_date,
+        - SQL Query: Copy and paste the following code into the Code Editor:
 
-        (
-            select count(*) from SM_REACTIONS smr
-            where smr.post_id=p.id
-        ) as REACTIONS,
+          ```
+           <copy>
+            select
+            p.id,
+            p.created_by AS user_name,
+            p.post_comment AS comment_text,
+            p.file_blob,
+            p.file_mime,
 
-        (
-            select 'user-has-liked' from SM_REACTIONS smr
-            where smr.post_id=p.id and created_by=:APP_USER
-        ) USER_REACTION_CSS
+            apex_util.get_since(p.created) post_date,
 
-        from SM_POSTS p
+            (
+                select count(*) from SM_REACTIONS smr
+                where smr.post_id=p.id
+            ) as REACTIONS,
 
-        order by p.created desc
-    </copy>
-    ```
+            (
+                select 'user-has-liked' from SM_REACTIONS smr
+                where smr.post_id=p.id and created_by=:APP_USER
+            ) USER_REACTION_CSS
 
-    ![SQL expression in editor](images/sql-code.png)
+            from SM_POSTS p
 
-5. Scroll down in the Property Editor to the **Appearance** section:
+            order by p.created desc
+           </copy>
+          ```
 
-    - In the Appearance > CSS Classes box, enter **t-Chat**
+    - Appearance > CSS Classes box: **t-Chat**
 
-    - In Advanced > Static ID, enter **timeline**.
+    - Advanced > HTML DOM ID: **timeline**
 
-    ![Property editor](images/appearance.png)
+    ![Property Editor](images/title-type1.png)
 
-    We are not done with this region yet! We have to configure
-which columns from the query results will be used in which parts of the
-CARDS.
+    ![Property Editor](images/sql_query.png)
+
+3. **Save** the app.
+
+    Next, configure which query result columns will be used in different parts of the Cards region.
 
 ## Task 2: Configure the Attributes of the Cards Region
 
-1. In the Property Editor, select the **Attributes** tab, and make
-the following changes:
+1. Select the **Timeline** region. In the Property Editor, select **Attributes** tab and enter/select the following:
 
     - Card > Primary Key Column 1: **ID**
 
@@ -90,48 +92,54 @@ the following changes:
 
     - Subtitle > Column: **POST_DATE**
 
-    ![Attributes in Property Editor](images/attributes-1.png)
-
     - Body > Column: **COMMENT_TEXT**
 
-    - Icon and Badge > Icon Source: **Initials**
+    - Under Icon and Badge:
 
-    - Icon Column: **USER_NAME**
+        - Icon Source: **Initials**
 
-    ![Attributes in Property Editor](images/attributes-2.png)
+        - Icon Column: **USER_NAME**
 
-    And finally (for this Region), scroll down to the Media section, and set
-the following attributes:
+    ![Attributes in Property Editor](images/attributes-11.png)
 
-    - Source: **BLOB column**
+    ![Attributes in Property Editor](images/attributes-21.png)
 
-    - BLOB Column: **FILE_BLOB**
+2. Finally, scroll down to the **Media** section, and enter/set the following attributes:
 
-    - Position: **First**
+    - Under Media:
 
-    - Appearance: **Widescreen**
+        - Source: **BLOB column**
 
-    - Sizing: **Cover**
+        - BLOB Column: **FILE_BLOB**
 
-    - CSS Classes: enter **selectDisable**
+        - Position: **First**
 
-    - Copy and paste **&COMMENT_TEXT.** (including the period!)
-    into the **Image Description** box
+        - Appearance: **Widescreen**
+
+        - Sizing: **Cover**
+
+        - CSS Classes: **selectDisable**
+
+        - Image Description: **&COMMENT_TEXT.** (including the period!)
 
     - BLOB Attributes > Mime Type Column: **FILE_MIME**
 
-    ![Attributes in Property Editor](images/attributes-3.png)
+    ![Attributes in Property Editor](images/attributes-31.png)
 
-2. Now, the region is completely configured. Click **Save and Run**.
+3. The Cards region is now fully configured. Click **Save and Run**.
 
-    If you made a post earlier, you should now see your image and your
-comment text!
+    If you made a post earlier, you should now see your uploaded image and comment text.
 
-    ![Running app](images/run-app.png)
+    ![Running app](images/run-app11.png)
+
+## Summary
+
+In this lab, you created and configured a Cards region to display posts from the SM_POSTS table. You also configured card attributes, media settings, and SQL query mappings to display user information, images, and post comments in the Social Media App.
 
 You may now **proceed to the next lab**
 
 ## Acknowledgements
 
- - **Author** - Jayson Hanes, Principal Product Manager; Apoorva Srinivas, Senior Product Manager;
- - **Last Updated By/Date** - Ankita Beri Product Manager, November 2023
+- **Author** - Jayson Hanes, Principal Product Manager; Apoorva Srinivas, Senior Product Manager;
+
+- **Last Updated By/Date** - Ankita Beri, Senior Product Manager, May 2026

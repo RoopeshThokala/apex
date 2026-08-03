@@ -2,388 +2,439 @@
 
 ## Introduction
 
-OCI Vision can classify images into thousands of categories to simplify common digital asset management scenarios or identify items that need attention, such as anomaly in an X-Ray. Developers can also identify and localise objects in images to automate counting of common items, such as packages and vehicles.
+OCI Vision can classify images into thousands of categories to simplify common digital asset management scenarios or identify items needing attention, such as X-ray anomalies. Developers can also identify and localize objects in images to automate counting common items, such as packages and vehicles.
 
-In this lab, you learn how to integrate OCI Vision REST API with Oracle APEX to analyse and index the images uploaded by the user.
+Optionally, to get an overview of the OCI Vision service, try the [AI Services: Introduction to OCI Vision](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=931) workshop.
 
-Estimated Time: 20 Minutes
+In this lab, you learn how to integrate OCI Vision REST API with Oracle APEX to analyze and index images and text within images uploaded by the user.
+
+Estimated Time: 20 minutes
 
 ### Objectives
-In this lab, you:
 
-- Configure OCI Vision REST API as REST Data Source
-- Invoke the OCI Vision REST Data Source through a Page Process
-- Enhance Timeline Region to include AI Search
+In this lab, you learn how to:
 
-## Task 1: Configure OCI Vision REST API as REST Data Source
+- Configure OCI Vision REST API as a REST Data Source.
+- Invoke the OCI Vision REST Data Source for image classification.
+- Invoke the OCI Vision REST Data Source for text detection.
+- Enhance the Timeline region to include AI search.
 
-In this task, you create a REST Data Source with OCI vision REST API as the endpoint.
+## Task 1: Configure OCI Vision REST API as a REST Data Source
 
-1. Navigate to the application home page and click **Shared Components**.
+In this task, you create a REST Data Source with OCI Vision REST API as the endpoint.
 
-   ![Click Timeline](images/sm-shared-comp1.png " ")
+1. In the left navigation bar, click the **App Builder** icon.
 
-2. Under Data Sources, click **REST Data Sources**.
+    ![Click App Builder](images/nav-to-app.png " ")
 
-   ![Click Timeline](images/rest-data-sources.png " ")
+2. In the App Builder home page, click the **Application Name**.
 
-3. Click **Create**.
+    ![Click the application name in App Builder](images/nav-app.png " ")
 
-   ![Click Timeline](images/rest-data-source-create1.png " ")
+3. In the Application home page, click **Shared Components**.
 
-4. Select **From scratch** and click **Next**.
+    ![Click Shared Components](images/shared.png " ")
 
-   ![Click Timeline](images/rest-method.png " ")
+4. Under Data Sources, click **REST Data Sources**.
 
-5. Under Create REST Data Source, enter the following attributes and click **Next**.
-    - **Rest Data Source Type**: Select **Oracle Cloud Infrastructure (OCI)**
+    ![Click REST Data Sources](images/rest.png " ")
 
-    - **Name**: Enter **OCI Vision**
+5. Click **Create**.
 
-    - **URL Endpoint**: https://vision.aiservice.us-ashburn-1.oci.oraclecloud.com/20220125/actions/analyzeImage
+    ![Click Create](images/create-rest.png " ")
 
-    *Note: URL Endpoint may differ based on your OCI tenancy. Refer to the following link for more details*- https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125
+6. Leave the defaults and click **Next**.
 
-   ![Click Timeline](images/create-rest-data.png " ")
+    ![Leave the defaults and click Next](images/create-rest1.png " ")
 
-6. Under Create REST Data Source - Remote Server, click **Next**.
+7. Under Create REST Data Source, enter the following attributes.
 
-   ![Click Timeline](images/remote-server.png " ")
+    - REST Data Source Type: **Oracle Cloud Infrastructure (OCI)**
 
-7. Under Authentication,
+    - Name: **OCI Vision**
 
-    - For Authentication: Enable **Authentication Required**  
+    - URL Endpoint: **<https://vision.aiservice.us-ashburn-1.oci.oraclecloud.com/20220125/actions/analyzeImage>**
 
-    - For Credentials: Select **apex\_ai\_cred**
+    **Note:** The URL Endpoint may differ based on your OCI tenancy. For more information, see <https://docs.oracle.com/en-us/iaas/api/#/en/vision/20220125>.
 
+    Click **Next**.
 
-8. Click **REST Source Manually**.
-   REST data source is successfully created. The next step to configure the POST operation parameters for this REST Data Source.
+    ![Enter OCI Vision REST Data Source details](images/create-rest2.png " ")
 
-   ![Click Timeline](images/rest-data-authentication.png " ")
+8. Under Create REST Data Source - Remote Server, leave the defaults.
 
-9. On the REST Data Sources page, click **OCI Vision**.
+    Click **Next**.
 
-   ![Click Timeline](images/select-oci-vision.png " ")
+    ![Click Next on Remote Server](images/remote-server.png " ")
 
-10. Select Operations Tab and click **Edit icon** for the POST operation and enter the following:
-    - **Database Operation**: -Not Mapped-
+9. Under Authentication, enter/select the following:
 
-    - **Request Body Template**: Copy and paste JSON given below.
+    - Authentication Required: **Toggle On**
 
-    ```
-    <copy>
-      {
-         "compartmentId": "#COMPARTMENT_ID#",
-         "image": {
-         "source": "INLINE",
-         "data": "#FILE_DATA#"
-       },
-      "features": [
-      {
-            "featureType": "#FEATURE_TYPE#",
-            "maxResults": 5
-         }
-        ]
-      }
-    <copy>
-     ```
+    - Credentials: **apex\_ai\_cred**
 
-    ![Click Timeline](images/edit-post.png " ")
+    Click **Create REST Source Manually**.
 
-    ![Click Timeline](images/post.png " ")
+    The REST Data Source is created successfully. The next step is to configure the POST operation parameters for this REST Data Source.
 
-11. Select Operation Parameters Tab and click **Add Parameter**
+    ![Set Authentication and click Create REST Source Manually](images/auth.png " ")
 
-   ![Click Timeline](images/add-parameter.png " ")
+10. On the REST Data Sources page, click **OCI Vision**.
 
-12. Under Edit REST Data Source Parameter:
+    ![Click OCI Vision REST Data Source](images/rest-data-authentication.png " ")
 
-       - **Type**: Request or Response Body
+11. Select the Operations tab.
 
-       - **Name**: COMPARTMENT_ID
+    Click the **Edit** icon for the **POST** operation.
 
-       - **Direction**: In
+    ![Click Edit for POST operation](images/edit-post.png " ")
 
-    Click **Add and Add Another**
+12. In the REST Source Operation page, enter the following:
+    - Database Operation: **-Not Mapped-**
 
-    ![Click Timeline](images/add-comp.png " ")
+    - Request Body Template: Copy and paste the following JSON:
 
-13. Under Edit REST Data Source Parameter:
+        ```json
+        <copy>
+        {
+            "compartmentId": "#COMPARTMENT_ID#",
+            "image": {
+                "source": "INLINE",
+                "data": "#FILE_DATA#"
+            },
+            "features": [
+                {
+                    "featureType": "#FEATURE_TYPE#",
+                    "maxResults": 5
+                }
+            ]
+        }
+        </copy>
+        ```
 
-       - **Type**: Request or Response Body
+    ![Enter Request Body Template JSON](images/post.png " ")
 
-       - **Name**: FILE_DATA
+13. Under Operation Parameters, click **Synchronize with body**.
 
-       - **Direction**: In
+    ![Click Synchronize with body](images/syncro.png " ")
 
-    Click **Add and Add Another**
+14. In the pop-up window, click **OK**.
 
-14. Under Edit REST Data Source Parameter:
+    ![Click OK in the Synchronize with Body dialog](images/add-parameter.png " ")
 
-       - **Type**: Request or Response Body
+15. Under Operation Parameters, click **Add Parameter**.
 
-       - **Name**: FEATURE_TYPE
+    ![Click Add Parameter](images/add-comp.png " ")
 
-       - **Direction**: In
+16. In the **Edit REST Data Source Parameter** dialog, add the following two parameters one after the other:
 
-    Click **Add and Add Another**
+    | #   | Type                     | Name         | Direction | Static | Default Value Type | Static Value |
+    | --- | ------------------------ | ------------ | --------- | ------ | ------------------ | ------------ |
+    | 1   | Request or Response Body | RESPONSE     | Out       |        |                    |              |
+    | 2   | HTTP Header              | Content-Type | In        | ON     | Static             | application/json |
+    {: title="POST Operation Parameters"}
 
-15. Under Edit REST Data Source Parameter:
+    ![Add RESPONSE parameter](images/response.png " ")
 
-       - **Type**: Request or Response Body
-
-       - **Name**: RESPONSE
-
-       - **Direction**: Out
-
-    Click **Add and Add Another**
-
-    ![Click Timeline](images/response.png " ")
-
-16. Under Edit REST Data Source Parameter:
-
-       - **Type**: HTTP Header
-
-       - **Name**: Content-Type
-
-       - **Direction**: In
-
-       - **Default value**: application/json
-
-       - **Static**: ON
-
-    Click **Add Parameter**.
-
-    ![Click Timeline](images/content-type.png " ")
+    ![Add Content-Type parameter](images/content-type.png " ")
 
 17. Click **Apply Changes**.
 
+    ![Click Apply Changes](images/apply-changes.png " ")
 
-## Task 2: Invoke the OCI Vision REST Data Source through a Page Process
+## Task 2: Invoke the OCI Vision REST Data Source for Image Classification
 
-In this task, you create a page process to invoke the OCI Vision REST Data Source implemented in the previous task.
+In this task, you create a page process to invoke the OCI Vision REST Data Source for image classification implemented in the previous task.
 
+1. Navigate to the application home page by clicking the **Application ID**.
 
-1. Navigate to the application homepage by clicking on the Application ID.
+    ![Click the Application ID](images/click-app-id11.png " ")
 
-   ![Click Timeline](images/click-app-id11.png " ")
+2. Click the **1-Timeline** page.
 
-2. Click **1-Timeline** page.  
+    ![Click 1-Timeline page](images/select-timeline1.png " ")
 
-   ![Click Timeline](images/select-timeline1.png " ")
+3. In the Rendering tab, right-click the **Timeline** region and select **Create Page Item**.
 
-3. Right-click **Timeline** region under Rendering Pane and click **Create Page Item**.
-
-   ![Click Timeline](images/create-page-item2.png " ")
+    ![Right-click Timeline and select Create Page Item](images/create-page-item.png " ")
 
 4. In the Property Editor, enter the following:
 
-   Under Identification:
+    - Under Identification:
 
-    - **Name**: P1\_RESPONSE
+        - Name: **P1\_RESPONSE**
 
-    - **Type**: Hidden
+        - Type: **Hidden**
 
-   ![Click Timeline](images/response-page-item1.png " ")
+    ![Set Name to P1_RESPONSE and Type to Hidden](images/response-page-item.png " ")
 
-5. Navigate to the Processing Tab (left pane) and right click on Processing Tab or Processes and click **Create Process**.
+5. In the left pane, navigate to the **Processing** tab.
 
-   ![Click Timeline](images/processing.png " ")
+    Right-click **Processes** and select **Create Process**.
 
-6. In the Property Editor, enter the following:
+    ![Right-click Processes and select Create Process](images/processing.png " ")
 
-  Under Identification section:
+6. In the Property Editor, enter/select the following:
 
-    - **Name**: Analyze Image
+    - Under Identification:
 
-    - **Type**: Execution Chain
+        - Name: **Analyze Image**
 
-  Under Settings:
+        - Type: **Execution Chain**
 
-    - Enable **Run in Background**.
+    - Under Background Execution:
 
-    ![Click Timeline](images/analyze-image1.png " ")
+        - Run in Background: **Toggle On**
 
-7. Right click on the **Analyze Image** Process you just created and select **Add Child Process**.
+    ![Configure Analyze Image Execution Chain](images/analyze-image.png " ")
 
-    ![Click Timeline](images/add-child-process11.png " ")
+7. Right-click the **Analyze Image** process and select **Add Child Process**.
+
+    ![Right-click Analyze Image and select Add Child Process](images/add-child-process.png " ")
 
 8. In the Property Editor, enter the following:
 
-   Under Identification section:
+    - Under Identification:
 
-    - **Name**: Invoke REST Data Source
+        - Name: **Image Classification**
 
-    - **Type**: Invoke API
+        - Type: **Invoke API**
 
-    - **Execution Chain**: Analyze Image
+    - Under Invoke:
 
-   Under Settings Section:
+        - Type: **REST Source**
 
-    - **Type**: REST Source
+        - REST Source: **OCI Vision**
 
-    - **REST Source**: OCI Vision
+        - Operation: **POST**
 
-    - **Operation**: POST
+    ![Configure Image Classification Invoke API](images/child-process.png " ")
 
-    ![Click Timeline](images/child-process11.png " ")
+9. In the **Rendering Tree** under the newly created child process **Image Classification**, expand Parameters and select **COMPARTMENT\_ID**. Enter the following:
 
-9. Click **COMPARTMENT\_ID** and enter the following:
+    - Under Value:
 
-   Under Value :
+        - Type: **Static Value**
 
-    - **Type**: Static Value
+        - Value: Enter the compartment OCID.
 
-    - **Value**: Enter the Compartment ID.
+    *Note: If using the root compartment, enter the tenancy OCID from the configuration preview file generated during API key creation. If you use a different compartment, you can find the corresponding compartment OCID from the OCI Console.*
 
-   *Note: If you are using the root compartment, enter the tenancy OCID from the configuration preview file generated during API Key creation. If you are using a different compartment, you can find the corresponding compartment OCID from OCI Console.*
+    ![Set COMPARTMENT_ID static value](images/compartment-id.png " ")
 
-   ![Click Timeline](images/compartment-id.png " ")
+10. Select **FEATURE_TYPE** and enter the following:
 
-10. Click **FEATURE_TYPE** and enter the following:
+    - Under Value:
 
-   Under Value :
+        - Type: **Static Value**
 
-    - **Type**: Static Value
+        - Value: **IMAGE_CLASSIFICATION**
 
-    - **Value**: IMAGE_CLASSIFICATION
+    ![Set FEATURE_TYPE to IMAGE_CLASSIFICATION](images/feature-type.png " ")
 
-    ![Click Timeline](images/feature-type.png " ")
+11. Select **FILE_DATA** and enter the following:
 
-11. Click **FILE_DATA** and enter the following:
+    - Under Value:
 
-   Under Value:
+        - Type: **SQL Query (Return Single Value)**
 
-    - **Type**: SQL Query(Return Single Value)
+        - SQL Query: Copy and paste the following code in the SQL Code editor:
 
-    - **SQL Query**: Copy and paste the below code in the SQL Code editor:
+            ```sql
+            <copy>
+            SELECT REPLACE(REPLACE(apex_web_service.blob2clobbase64(file_blob), CHR(10), ''), CHR(13), '')
+            FROM sm_posts
+            WHERE id = :P1_ID;
+            </copy>
+            ```
 
-      ```
-      <copy>
-      select replace(replace(apex_web_service.blob2clobbase64(file_blob), chr(10),''),chr(13),'')
-       from SM_posts
-       where ID = :P1_ID;
-      <copy>
-      ```
+    ![Set FILE_DATA with SQL query](images/file-data.png " ")
 
-   ![Click Timeline](images/file-data.png " ")
+12. Select **RESPONSE** and enter the following:
 
-12. Click **RESPONSE** and enter the following:
+    - Under Parameter:
 
-    - Under **Parameter**: Disable **Ignore Output**
+        - Ignore Output: **Toggle Off**
 
-    Under Value :
+    - Under Value:
 
-    - For **Item**: Select **P1\_RESPONSE**
+        - Type: **Item**
+        - Item: **P1\_RESPONSE**
 
-    ![Click Timeline](images/response-param.png " ")
+    ![Set RESPONSE to P1_RESPONSE item](images/response-param.png " ")
 
-13. Right click on the **Analyze Image** process and select **Add Child Process**.
+13. In the Rendering Tree, right-click the **Analyze Image** process and select **Add Child Process**.
 
-    ![Click Timeline](images/add-child-process12.png " ")
+    ![Right-click Analyze Image and add another child process](images/add-child-process2.png " ")
 
 14. In the Property Editor, enter the following:
 
-    Under Identification :
+    - Under Identification:
 
-    - For **Name** : Parse the Response
+        - Name: **Parse Image Classification Response**
 
-    Under Source:
+    - Under Source:
 
-    - For **PL/SQL Code** : Copy and paste the below code in the PL/SQL Code editor:
+        - PL/SQL Code: Copy and paste the following code in the PL/SQL Code editor:
 
-    ```
-    <copy>
-    UPDATE SM_POSTS
-    SET
-    AI_OUTPUT = (
-        SELECT
-            LISTAGG(obj_name, ',') WITHIN GROUP(
-            ORDER BY
-                obj_name
+        ```sql
+        <copy>
+        UPDATE sm_posts
+        SET ai_output = (
+            SELECT LISTAGG(obj_name, ',') WITHIN GROUP (ORDER BY obj_name)
+            FROM JSON_TABLE(:P1_RESPONSE, '$.labels[*]'
+                COLUMNS obj_name VARCHAR2(100) PATH '$.name'
             )
-        FROM
-            JSON_TABLE ( :P1_RESPONSE, '$.labels[*]'
-                COLUMNS
-                    obj_name VARCHAR2 ( 100 ) PATH '$.name[*]'
-            )
-      )
-     WHERE
-     ID = :P1_ID;
-     <copy>
-     ```
+        )
+        WHERE id = :P1_ID;
+        </copy>
+        ```
 
-   ![Click Timeline](images/parse-response1.png " ")
+    ![Enter Parse Image Classification PL/SQL code](images/parse-response.png " ")
 
 15. Click **Save**.
 
-## Task 3: Enhance Timeline Region to include AI Search
-In this task, you create a page item P1\_AI\_SEARCH using which the end user can enter the search terms and search through the images.
+    ![Click Save](images/save-page.png " ")
 
-1. Go to the Rendering tab, right-click **After Logo** and select **Create Page Item**.
+## Task 3: Invoke the OCI Vision REST Data Source for Text Detection
 
-    ![Click Timeline](images/after-logo-page-item1.png " ")
+In this task, you duplicate the page process to invoke the OCI Vision REST Data Source for text detection.
 
-2. In the property editor, enter the following:
+1. Under Processing, right-click **Image Classification** and select **Duplicate**.
 
-   Under Identification:
+    ![Duplicate Image Classification process](images/duplicated-process.png " ")
 
-    - For Name: Enter **P1\_AI\_SEARCH**
+2. In the Property Editor, modify the following:
 
-   Under Label:
+    - Under Identification:
 
-    - For Label : Enter **AI Search**
+        - Name: **Text Detection**
 
-   Under Settings:
+    - Under Execution:
 
-    - Enable **Submit when Enter pressed**
+        - Sequence: **40**
 
-   Under Appearance:
+    ![Rename to Text Detection](images/text-detections.png " ")
 
-    - For Width : Enter **100**
+3. In the Rendering Tree under **Text Detection**, expand **Parameters** and select **FEATURE_TYPE**. Modify the following:
 
-   ![Click Timeline](images/ai-search-page-item1.png " ")
+    - Under Value:
 
-3. Select **Timeline** region, in the property editor, enter the following:
-   Under Source:
-    - For **SQL Query**: Copy and paste the below SQL query in the code Editor
+        - Value: **TEXT_DETECTION**
 
-    ```
-    <copy>
-    select
-    p.id,
-    p.created_by AS user_name,
-    p.post_comment AS comment_text,
-    p.file_blob,
-    p.file_mime,    
-    apex_util.get_since(p.created) post_date,
-    (
-        select count(*) from SM_REACTIONS smr
-        where smr.post_id=p.id
-    ) as REACTIONS,
-    (
-        select 'user-has-liked' from SM_REACTIONS smr
-        where smr.post_id=p.id and created_by=UPPER(:APP_USER)
-    ) USER_REACTION_CSS
-    from SM_POSTS p
-    where (:P1_AI_SEARCH IS NOT NULL AND upper(ai_output) like upper('%'||:P1_AI_SEARCH||'%'))OR :P1_AI_SEARCH IS NULL
-    order by p.created desc;
-   <copy>
-   ```
-    - For Page items to Submit: Select **P1\_AI\_SEARCH**
+    ![Set FEATURE_TYPE to TEXT_DETECTION](images/text-detection.png " ")
 
-    ![Click Timeline](images/timeline-query11.png " ")
+4. Right-click the **Parse Image Classification Response** child process and select **Duplicate**.
+
+    ![Duplicate Parse Image Classification process](images/duplicate-proc.png " ")
+
+5. In the Property Editor, modify the following:
+
+    - Under Identification:
+
+        - Name: **Parse Text Detection Response**
+
+    - Under Source:
+
+        - PL/SQL Code: Update the code in the PL/SQL Code editor:
+
+            ```sql
+            <copy>
+            UPDATE sm_posts
+            SET ai_output_td = (
+                SELECT LISTAGG(obj_name, ',') WITHIN GROUP (ORDER BY obj_name)
+                FROM JSON_TABLE(:P1_RESPONSE, '$.imageText.words[*]'
+                    COLUMNS obj_name VARCHAR2(100) PATH '$.text'
+                )
+            )
+            WHERE id = :P1_ID;
+            </copy>
+            ```
+
+    - Under Execution:
+
+        - Sequence: **60**
+
+        ![Enter Parse Text Detection PL/SQL code](images/parse-text.png " ")
+
+6. Click **Save**.
+
+    ![Click Save](images/save-pages.png " ")
+
+## Task 4: Enhance the Timeline Region to Include AI Search
+
+In this task, you create a search bar where the user can enter search terms and search through images and text.
+
+1. Go to the Rendering tab, right-click **After Logo**, and select **Create Page Item**.
+
+    ![Right-click After Logo and select Create Page Item](images/after-logo-page-item.png " ")
+
+2. In the Property Editor, enter the following:
+
+    - Identification > Name: **P1\_AI\_SEARCH**
+
+    - Label > Label: **AI Search**
+
+    - Settings > Enable **Submit when Enter pressed**
+
+    - Appearance > Width: **100**
+
+    ![Configure P1_AI_SEARCH page item](images/ai-search-page-item.png " ")
+
+3. In the Property Editor, select the **Timeline** region and enter the following:
+
+    - Under **Source**:
+
+        - SQL Query: Copy and paste the following query:
+
+            ```sql
+            <copy>
+            SELECT
+                p.id,
+                p.created_by AS user_name,
+                p.post_comment AS comment_text,
+                p.file_blob,
+                p.file_mime,
+                apex_util.get_since(p.created) post_date,
+                (
+                    SELECT COUNT(*)
+                    FROM sm_reactions smr
+                    WHERE smr.post_id = p.id
+                ) AS reactions,
+                (
+                    SELECT 'user-has-liked'
+                    FROM sm_reactions smr
+                    WHERE smr.post_id = p.id
+                        AND created_by = UPPER(:APP_USER)
+                ) user_reaction_css
+            FROM sm_posts p
+            WHERE (
+                    :P1_AI_SEARCH IS NOT NULL
+                    AND (
+                        UPPER(ai_output) LIKE UPPER('%' || :P1_AI_SEARCH || '%')
+                        OR UPPER(ai_output_td) LIKE UPPER('%' || :P1_AI_SEARCH || '%')
+                    )
+                )
+                OR :P1_AI_SEARCH IS NULL
+            ORDER BY p.created DESC;
+            </copy>
+            ```
+
+        - Page items to Submit: **P1\_AI\_SEARCH**
+
+    ![Update Timeline region SQL query](images/timeline-query.png " ")
 
 4. Click **Save and Run**.
 
+    ![Click Save and Run](images/save-run.png " ")
 
 ## Summary
-You now know how to integrate OCI AI Vision into Oracle APEX through a REST API Call.
 
-You may now **proceed to the next lab**.   
+You now know how to integrate OCI Vision into Oracle APEX through a REST API call.
 
-## Acknowledgments
-- **Author** - Roopesh Thokala, Senior Product Manager
-- **Co-Author** - Ankita Beri, Product Manager
-- **Last Updated By/Date** - Ankita Beri, Product Manager, November 2023
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+
+- **Author** - Roopesh Thokala, Principal Product Manager; Ankita Beri, Senior Product Manager
+- **Last Updated By/Date** - Sahaana Manavalan, Senior Product Manager, May 2026
