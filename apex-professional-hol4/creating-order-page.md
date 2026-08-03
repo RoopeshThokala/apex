@@ -6,10 +6,6 @@ In this lab, you will explore the Oracle APEX Page Designer and create a new pag
 
 Estimated Time: 15 minutes
 
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/main
 ### Objectives
 
 In this lab, you will:
@@ -96,15 +92,7 @@ You will create a new blank page titled Order Information where you will display
 2. On **Create Blank Page** dialog, enter/select the following:
     - Under Page Definition:
 
-<<<<<<< HEAD
-  Now, Click on **Navigation**, Enter the following.
-    - Breadcrumb - Set to **No**
-    - Navigation - Set to **Yes**
-  Click **Create Page**.
-  ![Click Create Page](./images/create-blank-page1.png " ")
-=======
         - Page Number: **16**
->>>>>>> upstream/main
 
         - Name: **Order Information**
 
@@ -128,71 +116,23 @@ After creating the page, you'll add a Static Content region to display a thank y
 
     ![Create Static region](images/create-static-region1.png " ")
 
-<<<<<<< HEAD
-3. In the Property Editor, enter the following:
-    - For Title - enter **Thank you for your order!**
-    - For Template - select **Content Block**
-    - For Template Options - Click on the rectangular area next to the Template Options label to open the Template Options dialog. In the Dialog page, Check **Show Region Icon** and click **Ok**.
-    ![Define Template Options](images/create-static-region2.png " ")
-    - For Icon, enter **fa-heart**
-
-        ![Define Icon](images/create-static-region3.png " ")
-
-## Task 4: Lock and Unlock Pages
-Prevent conflicts during application development by locking pages in your application. By locking a page, you prevent other developers from editing it. You can lock a page on the Application home page, Page Locks page, and in Page Designer.
-
-The Page Lock button on the Page Designer toolbar indicates whether a page is locked. If the page is unlocked, the Page Lock button displays as an unlocked padlock.
-
-1. To lock a page in Page Designer, On the Page Designer toolbar, click the Page Unlocked button.
-
-  ![Define Icon](images/lock-a-page1.png " ")
-
-2. Enter a comment in the **Comment** field. Click **Lock**.When a page is locked, the Page Lock button displays as a **locked padlock**.
-
-  ![Define Icon](images/lock-a-page2.png " ")
-
-3. To unlock a page in Page Designer, If a page is locked, the Page Lock button displays as a locked padlock.
-
-  ![Define Icon](images/unlock-a-page1.png " ")
-
-4. On the Page Designer toolbar, click the **Page locked by you** button. If the page has been locked by another user the Lock button appears in red. You cannot unlock a page locked by another user. Click Unlock.
-
-  ![Define Icon](images/unlock-a-page2.png " ")
-
-
-
-## Task 5: Add Items to the Page
-Add a hidden item used to store the order ID without the user's being able to see it.
-=======
 3. In the Property Editor, enter/select the following:
 
     - Identification > Title: **Thank you for your order!**
 
     - Under Appearance:
->>>>>>> upstream/main
 
         - Template: **Content Block**
 
-<<<<<<< HEAD
-    ![Create Page Item](images/create-page-item1.png " ")
-=======
         - Template Options:
->>>>>>> upstream/main
 
             - Click **Template Options** label to open the Template Options dialog.
 
             - Enable **Show Region Icon**
 
-<<<<<<< HEAD
-    ![Define Page Item](./images/create-page-item2.png " ")    
-
-## Task 6: Add Static Content Region
-Add a region to contain Order details and items.
-=======
             Click **OK**
 
         - Icon: **fa-heart**
->>>>>>> upstream/main
 
     ![Define Icon](images/create-static-region3.png " ")
 
@@ -301,28 +241,17 @@ In this task, you will create a sub-region to display the order number and other
 
 1. In the Rendering tree (left pane), right-click on the **Thank you for your Order!** region and select **Create Sub Region**.
 
-    ![Create Sub Region](./images/create-sub-region1.png " ")
+    ![Create Sub Region](./images/create-sub-region11.png " ")
 
 2. In the Property editor, enter/select the following:
 
-<<<<<<< HEAD
-  ![Define Sub Region](./images/create-sub-region2.png " ")
-
-## Task 7: Add Order Details Region
-Add a region to display Order details.
-=======
     - Title: **Order: &P16_ORDER.** (including the period)
 
     - Type: **Static Content**
->>>>>>> upstream/main
 
     ![Define Sub Region](./images/create-sub-region2.png " ")
 
-<<<<<<< HEAD
-    ![Create Sub Region2](./images/create-sub-region11.png " ")
-=======
 ## Task 8: Add Order Details Region
->>>>>>> upstream/main
 
 You will add a Cards Region to display the key details of the customer's order, including the order date, status, and total price.
 
@@ -366,10 +295,6 @@ You will add a Cards Region to display the key details of the customer's order, 
                 ORDER_ID = :P16_ORDER
             </copy>
             ```
-<<<<<<< HEAD
-      ![Define Sub Region2](./images/create-sub-region12.png " ")
-=======
->>>>>>> upstream/main
 
         - Page Items to Submit: **P16_ORDER**
 
@@ -390,27 +315,11 @@ You will add a Cards Region to display the key details of the customer's order, 
             <b> Total: </b>&TOTAL.
             </copy>
             ```
-<<<<<<< HEAD
-      ![Define Attributes](./images/create-sub-region13.png " ")
-
-## Task 8: Add Items Region
-Add a region to display items in the order.
-=======
 
     ![Define Attributes](./images/create-sub-region23.png " ")
->>>>>>> upstream/main
 
 ## Task 9: Add Items Region
 
-<<<<<<< HEAD
-    ![Add Region Items](./images/create-sub-region21.png " ")
-3. In the Property Editor, enter the following:
-    - For Title - enter **Items**
-    - For Type - select **Cards**
-    - Under Source section:
-        - For Type - select **SQL Query**
-        - For SQL Query - enter the following SQL Query:
-=======
 Lastly, you'll create a region to show the individual items in the order, including their quantity, unit price, and subtotal, using an SQL query to retrieve the data.
 
 1. In the Rendering tree (left pane), right-click on **Order: &P16_ORDER.** region and select **Create Sub Region**.
@@ -430,7 +339,6 @@ Lastly, you'll create a region to show the individual items in the order, includ
         - Type: **SQL Query**
 
         - SQL Query: Enter the following SQL Query:
->>>>>>> upstream/main
 
             ```
             <copy>
@@ -449,10 +357,6 @@ Lastly, you'll create a region to show the individual items in the order, includ
                 AND ORDER_ID = :P16_ORDER
             </copy>
             ```
-<<<<<<< HEAD
-    ![Define Region](./images/create-sub-region22.png " ")
-=======
->>>>>>> upstream/main
 
         - Page Items to Submit: **P16_ORDER**
 
@@ -481,13 +385,9 @@ Lastly, you'll create a region to show the individual items in the order, includ
 
         - Source: **BLOB Column**
 
-<<<<<<< HEAD
-    ![Select Primary Key](./images/create-sub-region24.png " ")
-=======
         - BLOB Column: **PRODUCT_IMAGE**
 
         - Position: **Body**
->>>>>>> upstream/main
 
         - Appearance: **Auto**
 
@@ -505,17 +405,6 @@ Lastly, you'll create a region to show the individual items in the order, includ
 
 You now know how to add a new page to your existing APEX Application and add regions to define the page's content using the Page Designer. You may now **proceed to the next workshop**.
 
-<<<<<<< HEAD
-## What's next
-
-In the next hands-on lab, you learn how to create and develop various types of reports, including Interactive Grids, Smart Filters, Cards, and Faceted Searches.
-
-## Acknowledgments
-
-- **Author** - Roopesh Thokala, Senior Product Manager
-- **Contributor** - Ankita Beri, Product Manager
-- **Last Updated By/Date** - Roopesh Thokala, Senior Product Manager, October 2023
-=======
 ## What's Next?
 
 In the next workshop, you learn how to create and develop various reports, including Interactive Grids, Smart Filters, Cards, and Faceted Searches.
@@ -524,4 +413,3 @@ In the next workshop, you learn how to create and develop various reports, inclu
 
 - **Author** - Roopesh Thokala, Prinicpal Product Manager; Ankita Beri, Senior Product Manager
 - **Last Updated By/Date** - Ankita Beri, Senior Product Manager, October 2025
->>>>>>> upstream/main

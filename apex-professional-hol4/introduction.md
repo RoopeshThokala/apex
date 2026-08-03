@@ -24,9 +24,6 @@ Estimated Time: 15 minutes
 
 In this workshop, you will:
 
-<<<<<<< HEAD
-*Note: This workshop assumes you are using Oracle APEX 23.2.*
-=======
 - Navigate and Review the Page Designer panes.
 
 - Create a page to review the items that the customer bought.
@@ -48,7 +45,6 @@ Import them into your workspace. To run the app, please run the steps described 
 2. **[Using SQL Workshop](https://livelabs.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3524)**-->
 
 > **Note:** This workshop assumes you are using Oracle APEX 24.2. Some of the features might not be available in prior releases and the instructions, flow, and screenshots might differ if you use an older version of Oracle APEX.
->>>>>>> upstream/main
 
 ## Learn More - *Useful Links*
 

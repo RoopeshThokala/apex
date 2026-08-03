@@ -26,11 +26,7 @@ In this lab, you create new Page Items and Buttons in the Shopping Cart and Add 
 
 Stuck or Missed out on completing the previous labs? Don't worry! You can download the application from the following:
 
-<<<<<<< HEAD
-*Note: This workshop assumes you are using Oracle APEX 23.2.*
-=======
 - **[Sample Reporting](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FManagingAndCustomisingInteractiveGrids-SampleReporting.sql)**
->>>>>>> upstream/main
 
 - **[Online Shopping Application](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FManagingAndCustomisingInteractiveGrids-OnlineShoppingApplication.sql)**
 

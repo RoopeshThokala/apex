@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "Module 7: Developing Reports for Talent Acquisition",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md",
+            "description": "Workshop overview, audience, objectives, and lab flow for the new AI Interactive Report feature."
+        },
+        {
+            "title": "Lab 1: Upgrade the Candidate Pipeline to an Interactive Report",
+            "description": "Add the Candidate Pipeline Interactive Report and Faceted Search.",
+            "type": "livelabs",
+            "filename": "../../lab-1-candidate-pipeline-interactive-report/lab-1-candidate-pipeline-interactive-report.md"
+        },
+        {
+            "title": "Lab 2: Add AI Interactive Report to Job Requisitions",
+            "description": "Enable AI report filtering and add column context.",
+            "type": "livelabs",
+            "filename": "../../lab-2-ai-interactive-report/lab-2-ai-interactive-report.md"
+        },
+        {
+            "title": "Lab 3: Build the Interview Schedule as an Interactive Grid",
+            "description": "Create an editable grid for interview stages.",
+            "type": "livelabs",
+            "filename": "../../lab-3-interview-schedule-interactive-grid/lab-3-interview-schedule-interactive-grid.md"
+        },
+        {
+            "title": "Lab 4: Create Job Openings Cards Page",
+            "description": "Build the job board Cards page and Smart Filters.",
+            "type": "livelabs",
+            "filename": "../../lab-4-job-openings-cards/lab-4-job-openings-cards.md"
+        },
+        {
+            "title": "Lab 5: Upgrade My Tasks to an Interactive Grid",
+            "description": "Replace the ESS My Tasks report with an editable grid.",
+            "type": "livelabs",
+            "filename": "../../lab-5-ess-my-tasks-interactive-grid/lab-5-ess-my-tasks-interactive-grid.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to common problems and directions for receiving live help.",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

@@ -28,42 +28,21 @@ Stuck or Missed out on completing the previous labs? Don't worry! First, follow 
 
 - After installing the sample dataset tables, import the SQL script from **[here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FOnlineShoppingApp-PartialDDLs.sql)**.
 
-<<<<<<< HEAD
-    ![Click App Builder](./images/click-app-builder.png " ")
-
-    ![Navigate to Online Shopping Cart Application](./images/navigate-to-osa.png " ")
-=======
 - Now import **[Online Shopping Application](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FManagingAndCustomisingInteractiveGrids-OnlineShoppingApplication.sql)** in your workspace.
 
 - When you run the application, you may encounter an “unauthorized user” error because no user has been assigned to the authorization scheme yet. To fix this, go to **Shared Components** in your workspace. Under Security, select **Application Access Control**, and click **Add User Role Assignment**. Then, add the same username you use to log in to the workspace, choose the appropriate application role, and click **Create Assignment**.
->>>>>>> upstream/main
 
 - If you want to uninstall the database objects, run the  script from **[here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles%2FCleanup-Scripts.sql)**.
 
 ## Task 1: Add Items and Buttons to display Order Information
 
-<<<<<<< HEAD
-    ![Select Shopping Cart Page](./images/select-shopping-cart-page.png " ")
-=======
 In this task, you will enhance the functionality of the Shopping Cart page in an online shopping application. By adding new page items and buttons, such as "Proceed to Checkout" and "Clear Shopping Cart," users can manage their shopping experience more efficiently. You will also create fields to capture customer details like email, full name, and store selection, streamlining the checkout process and improving the user interface.
->>>>>>> upstream/main
 
 1. Navigate to the **App Builder** and click **Online Shopping Application**.
 
-<<<<<<< HEAD
-    ![Drag and Drop Static Content Region](./images/drag-drop-static-content.png " ")
-
-4. In the Property Editor, enter the following:
-    - For Title - enter **Order Information**
-
-    ![Input Title for Static content region](./images/select-title-for-region.png " ")
-
-5. Navigate to the **Order Information** (left pane) region.
-=======
     ![Click App Builder](./images/click-app-builder.png " ")
 
     ![Navigate to Online Shopping Cart Application](./images/navigate-to-osa.png " ")
->>>>>>> upstream/main
 
 2. Now, select the **Shopping Cart** page.
 
@@ -126,14 +105,7 @@ In this task, you will enhance the functionality of the Shopping Cart page in an
 
     ![Create Button](./images/right-click-button.png " ")
 
-<<<<<<< HEAD
-    | Create Proceed Button                          |  Create Clear Button                            |
-    | ----------------------------------- | ----------------------------------- |
-    | ![Create Proceed Button](./images/create-button1.png " ") | ![Create Clear Button](./images/create-clear-button.png " ") |
-
-=======
 10. Now, create two buttons one after the other:
->>>>>>> upstream/main
 
     | Button Name | Label               | Slot | Button Template | Hot | Icon          |
     | ----------- | ------------------- | --------------- | --------------- | --- | ------------- |
@@ -141,11 +113,7 @@ In this task, you will enhance the functionality of the Shopping Cart page in an
     | Clear       | Clear Shopping Cart | Change          | Text with Icon  | Off | fa-cart-empty |
     {: title="List of Buttons to be created"}
 
-<<<<<<< HEAD
-     ![Add Server Side condition to Buttons](./images/create-button2.png " ")
-=======
     ![Create Proceed Button](./images/create-button1.png " ")
->>>>>>> upstream/main
 
     ![Create Clear Button](./images/create-clear-button.png " ")
 
@@ -274,20 +242,6 @@ In this task, you will create four-page items:
 
 ## Summary
 
-<<<<<<< HEAD
-In this hands-on lab, You learned how to create new Page Items and Buttons for Shopping Cart and Add to Cart pages. This enables the end users to review, edit item quantities, remove items, clear the cart, and proceed to checkout for a more user-friendly shopping experience. You may now **proceed to the next lab**.
-
-## Whats Next
-
-In the next Lab, you understand how to create validations in APEX to ensure data integrity. Then you also explore creating custom processes to enhance shopping cart functionality. Lastly, you learn to implement dynamic Actions for seamless cart management and navigation.
-
-
-## Acknowledgments
-
-- **Author** - Roopesh Thokala, Senior Product Manager
-- **Contributors** - Ankita Beri, Product Manager
-- **Last Updated By/Date** -  Roopesh Thokala, Senior Product Manager, May 2023
-=======
 In this lab, you learned how to create new page items and buttons for the shopping cart and add to cart pages. This enables the end users to review, edit item quantities, remove items, clear the cart, and proceed to checkout for a more user-friendly shopping experience. You may now **proceed to the next lab**.
 
 ## What's Next?
@@ -298,4 +252,3 @@ In the next workshop, you will understand how to create validations in APEX to e
 
 - **Author** - Roopesh Thokala, Principal Product Manager; Ankita Beri, Senior Product Manager
 - **Last Updated By/Date** -  Ankita Beri, Senior Product Manager, October 2025
->>>>>>> upstream/main

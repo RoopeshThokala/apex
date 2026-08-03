@@ -18,11 +18,7 @@ In this lab, you will:
 
 In this task, you go through the initial steps of logging into your Oracle APEX workspace and exploring the various components available within the development environment. You will begin by accessing the APEX workspace, which will introduce you to key features such as the App Builder, SQL Workshop, and the Gallery.
 
-<<<<<<< HEAD
-  ![Workspace Login](images/login-to-workspace.png " ")
-=======
 1. To log in to your Oracle APEX workspace, perform the following steps:
->>>>>>> upstream/main
 
     - Open your browser and enter the **URL** to sign in to the APEX development environment.
 
@@ -64,16 +60,8 @@ In this task, you install and explore a **Sample Reporting** application in Orac
 
    ![Install Sample Reporting](images/install-sample-app.png " ")
 
-<<<<<<< HEAD
-3. On the Install Application page, observe that your app is currently installing.
-
-   ![Install Application](images/installing-sample-app.png " ")
-=======
 3. You see that the application is installed. Click **Run Application**.
->>>>>>> upstream/main
 
-4. You can now see that the application is installed. Run the application by selecting **Run Application** Button.
-x
    ![Run Application](images/click-run-application.png " ")
 
 4. Log in to the **Sample Reporting** application as an End User. Enter your username and password (the same as your Workspace credentials) and click **Sign In**.
@@ -95,21 +83,9 @@ x
    ![View Reports](images/display-as-report1.png " ")
 
 ## Summary
-<<<<<<< HEAD
-You have now learned how to navigate the major components of Oracle APEX, install, and run a packaged application. You are now ready to **proceed to the next lab**.
-
-## What's next
-In the next hands-on lab, you'll gain practical experience in utilizing SQL Workshop. You'll explore tasks such as installing a Sample Dataset, extending existing table­s by adding new columns, populating new columns, creating lookup tables, developing Package­s, and utilizing various utilities such as Quick SQL, Data Workshop, and Data Generator.
-=======
->>>>>>> upstream/main
 
 You have now learned how to navigate the significant components of Oracle APEX and install and run a packaged application. You are ready to proceed to the next lab.
 
-<<<<<<< HEAD
-- **Author** - Roopesh Thokala, Senior Product Manager
-- **Contributor** - Ankita Beri, Product Manager
-- **Last Updated By/Date** - Roopesh Thokala, Oct 2023
-=======
 ## What's Next?
 
 In the next hands-on lab, you will gain practical experience in utilizing SQL Workshop. You will explore tasks such as installing a Sample Dataset, extending existing table­s by adding new columns, populating new columns, creating lookup tables, developing Package­s, and utilizing various utilities such as Quick SQL, Data Workshop, and Data Generator.
@@ -118,4 +94,3 @@ In the next hands-on lab, you will gain practical experience in utilizing SQL Wo
 
 - **Author** - Roopesh Thokala, Senior Product Manager; Ankita Beri, Product Manager
 - **Last Updated By/Date** - Ankita Beri, Product Manager, December 2024
->>>>>>> upstream/main

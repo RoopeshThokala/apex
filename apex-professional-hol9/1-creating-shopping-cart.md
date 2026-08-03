@@ -2,17 +2,7 @@
 
 ## Introduction
 
-<<<<<<< HEAD
-
-This Hands-on Lab is a collection of six tasks. After completing this lab, your application will enable customers to:
-
-- Create validations on the Page Items.
-- Create a Page process to create the Order
-- Clear the shopping cart
-- Proceed to checkout
-=======
 This lab enhances a shopping cart page by adding critical validations, processes, and branching processes to manage customer orders effectively. By the end, customers can place orders seamlessly, validate required information, clear their cart, and quickly proceed to checkout. These tasks ensure the application runs smoothly and delivers an optimized user experience.
->>>>>>> upstream/main
 
 Estimated Time: 15 minutes
 
@@ -46,45 +36,23 @@ Stuck or Missed out on completing the previous labs? Don't worry! First, follow 
 
 ## Task 1: Create Validations on the Page
 
-<<<<<<< HEAD
-1. Navigate to the **App Builder**.
-
-    ![Click App Builder](./images/click-app-builder.png " ")
-
-2. Then Click on **Online Shopping Application**.
-
-    ![Select Online Shopping Cart App](./images/click-app-builder1.png " ")
-=======
 In this task, you will add validations to ensure that required fields on the shopping cart page—such as customer name, email, and store—are filled before proceeding to the next steps. If mandatory information is missing, these validations will prompt the user with appropriate error messages.
 
 1. Navigate to the **App Builder**.
->>>>>>> upstream/main
 
     ![Click App Builder](./images/click-app-builder.png " ")
 
-<<<<<<< HEAD
-    ![Navigate to Shopping Cart Page](./images/navigate-to-shopping-cart-page.png " ")
-=======
 2. Click **Online Shopping Application**.
->>>>>>> upstream/main
 
     ![Select Online Shopping Cart App](./images/click-app-builder1.png " ")
 
 3. Select **17 - Shopping Cart** page.
 
-<<<<<<< HEAD
-     ![Create a Validation](./images/create-validation1.png " ")  
-=======
     ![Navigate to Shopping Cart Page](./images/navigate-to-shopping-cart-page.png " ")
->>>>>>> upstream/main
 
 4. Navigate to **Processing** tab. Right-click **Validating** and select **Create Validation**.
 
-<<<<<<< HEAD
-    ![Customise Validation](./images/create-validation2.png " ")
-=======
     ![Navigate to Shopping Cart Page](./images/create-validation.png " ")
->>>>>>> upstream/main
 
 5. In the property editor, enter/select the following:
 
@@ -92,38 +60,12 @@ In this task, you will add validations to ensure that required fields on the sho
 
     - Under Validation:
 
-<<<<<<< HEAD
-     ![Customise Validation](./images/create-validation3.png " ")
-=======
         - Type: **Item is NOT NULL**
->>>>>>> upstream/main
 
         - Item: **P17\_CUSTOMER\_FULL_NAME**
 
     - Under Error:
 
-<<<<<<< HEAD
-     ![Customise Validation](./images/create-validation4.png " ")       
-
-## Task 2: Add a Process to Create the Order
-
-1. On the **Processing** tab (left pane).
-2. Right- click **Processing** and click **Create Process**.
-
-     ![Create Page Process](./images/create-process1.png " ")
-
-3. In the Property Editor, enter the following:
-  Under Identification:
-    - For Name - enter **Checkout**
-    - For Type, Select **Invoke API**
-
-  Under Settings, select what Process Executes:
-    - For Type, Select **PL/SQL Package**
-    - For Package, Enter the case-sensitive PL/SQL package name, **MANAGE_ORDERS**. You can type in the name or pick from the list.
-    - For Procedure or Function, Enter the case-sensitive procedure or function name, **CREATE_ORDER**,  defined in the selected PL/SQL package. You can type in the name or pick from the list.
-
-     ![Create and Configure Invoke API Process](./images/create-process2.png " ")  
-=======
         - Error Message: **Please enter your name.**
 
         - Associated Item: **P17\_CUSTOMER\_FULLNAME**
@@ -154,70 +96,9 @@ This task focuses on creating a backend process that allows users to submit thei
 
 2. In the Property Editor, enter/select the following:
     - Under Identification:
->>>>>>> upstream/main
 
         - Name: **Checkout**
 
-<<<<<<< HEAD
-
-4. On the **Processing** tab (left pane), Expand the Process **Checkout**. Under **Parameters**, Click **p_customer**.
-   Under **Property Editor**, enter the following:
-   Under Value :
-   - For Type: Select **Item**
-   - For Value: Select **P16_CUSRTOMER_FULLNAME**
-
-  ![Configure Invoke API Process](./images/create-invoke-api1.png " ")
-
-5. Repeat the Above steps for the other parameters **p_customer_email**,**p_store**,**p_order_id**,**p_customer_id**. Set the Item Names as follows.
-    | Parameter Name  | When Button Pressed |
-    | ---   |  --- |
-    | p_customer_email | P16_CUSTOMER_EMAIL |
-    | p_store | P16_STORE |
-    | p_order_id | P16_ORDER_ID |   
-    | p_customer_id | P16_CUSTOMER_ID |
-
-    ![Configure Invoke API Process](./images/create-invoke-api2.png " ")
-
-
-6. Click **Save**.
-
-## Task 3: Add Process to Clear the Shopping Cart
-
-1. On the **Processing** tab (left pane).
-2. Right-click **Processing** and click **Create Process**.
-
-    ![Create Page Process](./images/create-process12.png " ")
-
-3. In the property editor,
-    Under Identification:
-      - For Name - Enter **Clear Shopping Cart**.
-      - For Type - Select **Execution Chain**.
-      - For Execution Chain - This attribute enables support for nested execution chains. Use this attribute to define another execution chain as the parent for this chain. For this example, select None.
-
-    Under Settings:
-      - Set **Run in Background** to **Yes**.
-
-    ![Create and Configure Background Process](./images/create-background-process1.png " ")
-
-4. Now, create a child process. In the Processing tab, select the Execution Chain process, right-click and select Create Child Process. The new child process displays under Processes.
-
-    ![Create a Child Process](./images/create-child-process1.png " ")
-
-5. In the Property Editor, enter the following:
-  Under Identification:
-    - For Name - enter **Clear shopping Cart - Child**
-    - For Type, Select **Invoke API**
-
-  Under Settings, select what Process Executes:
-    - For Type, Select **PL/SQL Package**
-    - For Package, Enter the case-sensitive PL/SQL package name, **MANAGE_ORDERS**. You can type in the name or pick from the list.
-    - For Procedure or Function, Enter the case-sensitive procedure or function name, **CLEAR_CART**,  defined in the selected PL/SQL package. You can type in the name or pick from the list.
-
-     ![Configure Child Process](./images/create-child-process2.png " ")
-
-Click Save.
-
-=======
         - Type: **Invoke API**
 
     - Under Settings:
@@ -294,17 +175,12 @@ In this task, you will create a process to clear the shopping cart when the cust
     Also, you can use the new **setDismissPreferences** API to control dismiss preferences and customize the timing of the auto-dismiss functionality.
 
     ![Configure Child Process](./images/shared-comp.png " ")
->>>>>>> upstream/main
 
 ## Task 4: Add Branches to the Page
 
 In this task, you will create a branching process that redirects the user to the appropriate page after they submit an order. Branches ensure a smooth navigation experience by guiding users based on their actions, such as checking or viewing their order details.
 
-<<<<<<< HEAD
-     ![Create a Branch](./images/create-branch1.png " ")  
-=======
 1. In the top right corner, navigate to **Edit Page 17**.
->>>>>>> upstream/main
 
     ![Navigate to page 17](./images/17-page.png " ")
 
@@ -318,15 +194,9 @@ In this task, you will create a branching process that redirects the user to the
 
     - Target: Click **No Link Defined**.
 
-<<<<<<< HEAD
-    ![Configure Branch](./images/create-branch2.png " ")
-
-4. Create a  second branch when the user clears the shopping cart. Right-click on **After Processing** and click **Create Branch**.
-=======
         - Type: **Page in this application**
 
         - Page: **16**
->>>>>>> upstream/main
 
         - Set Items: Enter/select the following:
 
@@ -337,19 +207,6 @@ In this task, you will create a branching process that redirects the user to the
 
         - Clear Cache: **16**.
 
-<<<<<<< HEAD
-    ![Configure Branch](./images/create-branch3.png " ")
-
-  Click Save.
-
-## Summary
-
-In this hands-on lab, You learned to create data validations for page items, ensuring data accuracy. You also implemented a dedicated page process to streamline order creation. Additionally, the lab covered clearing the shopping cart and enabling a seamless transition to the checkout process, enhancing the overall user experience.  You may now **proceed to the next lab**.
-
-## Whats Next:
-
-In the next lab, you explore the use of Dynamic Actions to efficiently manage the shopping cart, allowing for real-time updates. Additionally, you learn how to review product details and enabling users to add, edit, or remove items from their cart with the help of Page Process.
-=======
         Click **OK**.
 
     - Server-side condition > When Button Pressed: **Proceed**.
@@ -361,19 +218,12 @@ In the next lab, you explore the use of Dynamic Actions to efficiently manage th
 ## Summary
 
 In this hands-on lab, you learned to create data validations for page items, ensuring data accuracy. You also implemented a dedicated page process to streamline order creation. Additionally, the lab covered clearing the shopping cart and enabling a seamless transition to the checkout process, enhancing the overall user experience. You may now **proceed to the next lab**.
->>>>>>> upstream/main
 
 ## What's Next
 
-<<<<<<< HEAD
-- **Author** - Roopesh Thokala, Senior Product Manager
-- **Contributor** - Ankita Beri, Product Manager
-- **Last Updated By/Date** - Roopesh Thokala, Senior Product Manager, October 2023
-=======
 In the next lab, you explore the use of Dynamic Actions to manage the shopping cart, allowing for efficient real-time updates. Additionally, you learn how to review product details and enable users to add, edit, or remove items from their cart with the help of Page Process.
 
 ## Acknowledgements
 
 - **Author** - Roopesh Thokala, Senior Product Manager; Ankita Beri, Product Manager
 - **Last Updated By/Date** - Ankita Beri, Product Manager, September 2024
->>>>>>> upstream/main

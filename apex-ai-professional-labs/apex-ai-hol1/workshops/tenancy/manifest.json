@@ -1,0 +1,29 @@
+{
+    "workshoptitle": "Build an AI Interactive Report in Oracle APEX",
+    "help": "livelabs-help_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md",
+            "description": "Workshop overview, audience, objectives, and lab flow for the new AI Interactive Report feature."
+        },
+        {
+            "title": "Lab 1: Provision an Oracle APEX Workspace",
+            "filename": "../../1-sign-up-apex/1-sign-up-apex.md",
+            "description": "Provision an APEX Instance and/or Create a Workspace in Oracle APEX"
+        },
+        {
+            "title": "Lab 2: Configure a Generative AI Service",
+            "filename": "../../2-configure-an-ai-service/lab-2-configure-an-ai-service.md",
+            "type": {
+                "OCIGenAI": "OCIGenAI",
+                "OpenAI": "OpenAI"
+            }
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md",
+            "description": "Solutions to common problems and directions for receiving live help."
+        }
+    ]
+}
