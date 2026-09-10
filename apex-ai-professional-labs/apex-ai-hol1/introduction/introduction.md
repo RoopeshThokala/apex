@@ -28,7 +28,7 @@ Import them into your workspace. To run the app, please run the steps described 
 
 2. **[Using SQL Workshop]( )**
 
-> **Note:** This workshop assumes you are using Oracle APEX 26.1. Some of the features might not be available in prior releases and the instructions, flow, and screenshots might differ if you use an older version of Oracle APEX.q
+> **Note:** This workshop assumes you are using Oracle APEX 26.1. Some of the features might not be available in prior releases and the instructions, flow, and screenshots might differ if you use an older version of Oracle APEX.
 
 ## Learn More - *Useful Links*
 
