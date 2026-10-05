@@ -1,0 +1,4 @@
+FILE PLACEHOLDER: sample-candidate-cv.pdf
+Supply a small PDF containing fictitious candidate CV information.
+Use the real PDF for Lab 1's CV upload and download verification.
+This text file is not a PDF. Do not upload it as the sample CV.

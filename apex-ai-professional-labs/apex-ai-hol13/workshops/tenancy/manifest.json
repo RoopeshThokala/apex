@@ -1,0 +1,25 @@
+{
+    "workshoptitle": "Module 13: Forms Development",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "type": "livelabs",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Complete the Candidate Profile Form",
+            "type": "livelabs",
+            "filename": "../../lab-1-complete-candidate-profile-form/lab-1-complete-candidate-profile-form.md"
+        },
+        {
+            "title": "Lab 2: Link Candidate Profile and Interview Feedback",
+            "type": "livelabs",
+            "filename": "../../lab-2-candidate-profile-as-master-detail/lab-2-candidate-profile-as-master-detail.md"
+        },
+        {
+            "title": "Lab 3: Build a Bulk Stage Update Interactive Grid",
+            "type": "livelabs",
+            "filename": "../../lab-3-build-bulk-stage-update-ig/lab-3-build-bulk-stage-update-ig.md"
+        }
+    ]
+}
